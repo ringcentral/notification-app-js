@@ -7,8 +7,10 @@
 db.sqlite
 /src/
 /temp/
-/example-bots/
-/example-skills/
+/example-configs/
+/example-lambda/
+/docs/
+/.travis.yml
 /screenshots/
 .env.sample
 .env

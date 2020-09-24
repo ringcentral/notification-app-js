@@ -1,6 +1,6 @@
 {
   "name": "glip-integration-js",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Framework to create `Dimelo SDK source` for RingCentral Engage Digital",
   "main": "dist/index.js",
   "bin": {
