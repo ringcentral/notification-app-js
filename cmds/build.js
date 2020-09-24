@@ -1,0 +1,13 @@
+const { exec, rm, echo, mv } = require('shelljs')
+const { resolve } = require('path')
+
+const dist = resolve(__dirname, '../deploy')
+const f = resolve(__dirname, '../example-lambda')
+echo('building...')
+rm('-rf', `${dist}/*.js`)
+rm('-rf', `${dist}/*.json`)
+rm('-rf', `${dist}/*.map`)
+mv(`${f}/package.json`, `${f}/package.json.bak`)
+exec('node_modules/.bin/babel example-lambda --out-dir deploy --ignore "*.json"')
+mv(`${f}/package.json.bak`, `${f}/package.json`)
+echo('build done')

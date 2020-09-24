@@ -1,0 +1,9 @@
+{
+  "name": "ringcentral-engage-demo-source-server",
+  "version": "0.1.1",
+  "description": "Demo RingCentral engage source server deployed to lambda",
+  "dependencies": {
+    "ringcentral-engage-chatbot": "*",
+    "serverless-http": "^2.0.1"
+  }
+}

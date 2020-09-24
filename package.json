@@ -1,0 +1,85 @@
+{
+  "name": "glip-integration-js",
+  "version": "0.1.9",
+  "description": "Framework to create `Dimelo SDK source` for RingCentral Engage Digital",
+  "main": "dist/index.js",
+  "bin": {
+    "rcgi": "bin/rcgi.js",
+    "glip-integration-js": "bin/rcgi.js",
+    "glip-integration-js-create": "bin/rcgi-create.js",
+    "rcgic": "bin/rcgi-create.js"
+  },
+  "keywords": [
+    "ringcentral",
+    "Glip",
+    "integration",
+    "SDK"
+  ],
+  "scripts": {
+    "ngrok": "npm run proxy",
+    "proxy": "ngrok http 6066",
+    "start": "npm run dev",
+    "compile": "node_modules/.bin/babel src --out-dir dist",
+    "p": "cross-env NODE_ENV=production node -r @babel/register bin/rcec.js example-configs/interval-send-time.js",
+    "dev": "node -r @babel/register bin/rcgi.js example-configs/interval-send-time.js",
+    "clean": "node build/clean.js",
+    "build": "npm run clean && npm run compile",
+    "prepublishOnly": "npm run build",
+    "build-lambda": "node cmds/build",
+    "deploy-lambda": "node cmds/deploy",
+    "deploy": "npm run build-lambda && npm run deploy-lambda",
+    "watch": "cd deploy && ../node_modules/.bin/sls logs -f app -t",
+    "lint": "./node_modules/.bin/standard",
+    "jest": "./node_modules/.bin/jest",
+    "test": "./node_modules/.bin/run-s dev jest"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/register": "^7.0.0",
+    "cheerio": "^1.0.0-rc.3",
+    "cron": "^1.8.2",
+    "cross-env": "^5.2.0",
+    "jest": "^24.8.0",
+    "js-yaml": "^3.13.1",
+    "ngrok": "^3.1.0",
+    "serverless": "^1.35.1",
+    "standard": "^12.0.1"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.4.4",
+    "axios": "^0.19.0",
+    "body-parser": "1.19.0",
+    "commander": "^2.20.0",
+    "dotenv": "6.2.0",
+    "download": "^7.1.0",
+    "express": "^4.16.4",
+    "json-deep-copy": "^1.1.1",
+    "lodash": "^4.17.11",
+    "morgan": "^1.9.1",
+    "prompts": "^2.1.0",
+    "shelljs": "^0.8.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ringcentral/engage-digital-chatbot-js.git"
+  },
+  "author": "Drake Zhao <drake.zhao@ringcentral.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ringcentral/engage-digital-chatbot-js/issues"
+  },
+  "homepage": "https://github.com/ringcentral/engage-digital-chatbot-js#readme",
+  "standard": {
+    "ignore": [
+      "/temp/",
+      "/dist/"
+    ]
+  },
+  "jest": {
+    "roots": [
+      "tests"
+    ]
+  }
+}

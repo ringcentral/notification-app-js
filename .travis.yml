@@ -1,0 +1,15 @@
+matrix:
+  include:
+    - os: linux
+      language: node_js
+      node_js: "12"
+      sudo: required
+      dist: xenial
+
+script:
+  - npm run dev &
+  - npm run jest
+
+branches:
+  - release
+  - test
