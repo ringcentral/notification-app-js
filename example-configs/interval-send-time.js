@@ -4,11 +4,10 @@
  * demo integration that send time stamp every one minute
  */
 
-
 const axios = require('axios')
 const { CronJob } = require('cron')
 
-//send time stamp every one minute
+// send time stamp every one minute
 function runCron () {
   const rule = '* * * * *'
   console.log('Running cron job', rule)
@@ -20,7 +19,7 @@ function runCron () {
       .then((res) => {
         console.log('msg request send:', time)
         console.log('result:')
-        console.log(res)
+        console.log(res.data)
       })
   }, null, true)
 }
