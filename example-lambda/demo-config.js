@@ -1,48 +1,28 @@
 /**
- * demo config
+ * The most simple Glip integration
+ * Do not use it in production, demo only
+ * demo integration that send time stamp every one minute
  */
 
-/**
- * handle all request
- * @param {object} body, request body
- * @param {object} req, express request
- */
-exports.onRequest = async (body, req) => {
-  console.log('body:', body)
-  const { action, params } = body
-  console.log('param', params)
-  let result
-  // check https://github.com/ringcentral/engage-digital-source-sdk/wiki for more info
-  switch (action) {
-    case 'implementation.info':
-      result = {
-        objects:
-        {
-          messages: ['create', 'show', 'list'],
-          private_messages: ['create', 'show', 'list'],
-          threads: ['create', 'show', 'list']
-        },
-        options: []
-      }
-      break
+const axios = require('axios')
 
-    case 'threads.list':
-    case 'private_messages.list':
-    case 'messages.list':
-      result = []
-      break
-    case 'threads.show':
-    case 'private_messages.show':
-    case 'messages.show':
-      result = ''
-      break
-    default:
-      result = {}
-  }
-  return result
+async function sendMsg (req, res) {
+  const {
+    msg
+  } = req.query
+  const r = await axios.post(process.env.STATIC_WEBHOOK, {
+    text: 'Now',
+    body: msg
+  }, {
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json'
+    }
+  })
+  res.send(r.data)
 }
 
 // extends or override express app as you need
 exports.appExtend = (app) => {
-  // app.get('/some-route', (req, res) => res.end('some'))
+  app.get('/send-msg', sendMsg)
 }

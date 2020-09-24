@@ -3,7 +3,7 @@
  * standalone server file, no cli
  */
 
-import { createApp } from 'ringcentral-engage-source'
+import { createApp } from 'glip-integration-js'
 
 const path = './demo-config.js'
 console.log('-> bot:', path)

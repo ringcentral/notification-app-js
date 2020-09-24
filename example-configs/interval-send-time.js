@@ -21,7 +21,7 @@ function runCron () {
         console.log('result:')
         console.log(res.data)
       })
-  }, null, true)
+  }, null, true, undefined, undefined, true)
 }
 
 async function sendMsg (req, res) {

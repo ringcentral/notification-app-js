@@ -41,7 +41,7 @@ cp .env.sample .env
 npm start
 ```
 
-Then the team will get timestamp message every one minutes.
+Then the team will get timestamp message every minute.
 
 Check [example-configs/interval-send-time.js](example-configs/interval-send-time.js) to see the code, it is pretty simple.
 
@@ -53,19 +53,19 @@ npx glip-integration-js path-to-your-config.js
 
 ## Use is as a module
 
-todo
+[docs/direct-use.md](docs/direct-use.md)
 
 ## Real example
 
-todo
+[docs/write-a-config.md](docs/write-a-config.md)
 
 ## Write a config
 
-todo
+[docs/write-a-config.md](docs/write-a-config.md)
 
 ## Build and Deploy to AWS Lambda
 
-todo
+[docs/deploy-to-lambda.md](docs/deploy-to-lambda.md)
 
 ## Init a source server project with factory CLI tool
 
