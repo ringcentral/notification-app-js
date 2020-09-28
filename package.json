@@ -1,6 +1,6 @@
 {
   "name": "glip-integration-js",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Framework to create `Dimelo SDK source` for RingCentral Engage Digital",
   "main": "dist/index.js",
   "bin": {
@@ -63,14 +63,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ringcentral/engage-digital-chatbot-js.git"
+    "url": "git+https://github.com/ringcentral/glip-integration-js.git"
   },
   "author": "Drake Zhao <drake.zhao@ringcentral.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ringcentral/engage-digital-chatbot-js/issues"
+    "url": "https://github.com/ringcentral/glip-integration-js/issues"
   },
-  "homepage": "https://github.com/ringcentral/engage-digital-chatbot-js#readme",
+  "homepage": "https://github.com/ringcentral/glip-integration-js#readme",
   "standard": {
     "ignore": [
       "/temp/",
