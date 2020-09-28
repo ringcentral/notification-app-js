@@ -14,7 +14,7 @@ function runCron () {
   return new CronJob(rule, function () {
     const time = new Date().toString()
     axios.get(
-      `${process.env.GLIP_INTEGRATION_SERVER}/send-msg?msg=${time}`
+      `${process.env.RINGCENTRAL_APP_SERVER}/send-msg?msg=${time}`
     )
       .then((res) => {
         console.log('msg request send:', time)

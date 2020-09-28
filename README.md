@@ -1,6 +1,6 @@
 # glip-integration-js
 
-Js framework to create Glip integration.
+Js framework to create RingCentral notification messaging app.
 
 ## Prerequisites
 
@@ -34,7 +34,7 @@ Goto Glip app's App list, select **Webhook** app, and choose a team, and copy th
 # create env file
 cp .env.sample .env
 # then edit .env,
-# set https://xxxx.ap.ngrok.io as GLIP_INTEGRATION_SERVER
+# set https://xxxx.ap.ngrok.io as RINGCENTRAL_APP_SERVER
 # set glip webhook url copied as STATIC_WEBHOOK
 
 # run local dev server

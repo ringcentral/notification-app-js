@@ -1,7 +1,7 @@
 {
   "name": "glip-integration-js",
-  "version": "0.1.1",
-  "description": "Framework to create `Dimelo SDK source` for RingCentral Engage Digital",
+  "version": "0.2.0",
+  "description": "Framework to create RingCentral notification messaging app",
   "main": "dist/index.js",
   "bin": {
     "rcgi": "bin/rcgi.js",

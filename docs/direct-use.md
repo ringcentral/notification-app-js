@@ -11,8 +11,8 @@ import { createApp } from 'glip-integration-js'
 
 const conf = require('path/to/config.js')
 const app = createApp(conf)
-app.listen(GLIP_INTEGRATION__EXPRESS_PORT, GLIP_INTEGRATION__EXPRESS_HOST, () => {
-  console.log(`-> server running at: http://${GLIP_INTEGRATION__EXPRESS_HOST}:${GLIP_INTEGRATION__EXPRESS_PORT}`)
+app.listen(RINGCENTRAL_PORT, RINGCENTRAL_HOST, () => {
+  console.log(`-> server running at: http://${RINGCENTRAL_HOST}:${RINGCENTRAL_PORT}`)
 })
 ```
 

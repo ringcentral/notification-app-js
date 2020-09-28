@@ -35,7 +35,7 @@ async function run () {
   let file = resolve(__dirname, '../deploy/env.yml')
   let yml = readYml(file)
   console.log(yml, 'yml')
-  let url = yml.GLIP_INTEGRATION_SERVER
+  let url = yml.RINGCENTRAL_APP_SERVER
   // if (!url || !/^https:\/\/.+\.amazonaws\.com.+/.test(url)) {
   //   console.log('please set correct RINGCENTRAL_CHATBOT_SERVER in dist/.env.yml')
   //   process.exit(1)
@@ -57,10 +57,10 @@ async function run () {
     return log('build fails')
   }
   let urlReal = `${arr[1]}/prod`
-  log(`GLIP_INTEGRATION_SERVER in api gate way: ${urlReal}`)
+  log(`RINGCENTRAL_APP_SERVER in api gate way: ${urlReal}`)
   if (urlReal !== url) {
-    log('modify GLIP_INTEGRATION_SERVER in deploy/.env.yml')
-    yml.GLIP_INTEGRATION_SERVER = urlReal
+    log('modify RINGCENTRAL_APP_SERVER in deploy/.env.yml')
+    yml.RINGCENTRAL_APP_SERVER = urlReal
     let newYml = yaml.safeDump(yml)
     writeFileSync(file, newYml)
     run()

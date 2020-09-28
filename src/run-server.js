@@ -6,8 +6,8 @@
 import { createApp } from './index'
 
 const {
-  GLIP_INTEGRATION__EXPRESS_PORT: port,
-  GLIP_INTEGRATION__EXPRESS_HOST: host
+  RINGCENTRAL_PORT: port,
+  RINGCENTRAL_HOST: host
 } = process.env
 
 export default ({ path }) => {
