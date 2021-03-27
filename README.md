@@ -57,7 +57,7 @@ npx glip-integration-js path-to-your-config.js
 
 ## Real example
 
-[docs/write-a-config.md](docs/write-a-config.md)
+- [ringcentral-notification-demo-ui-app](https://github.com/ringcentral/ringcentral-notification-demo-ui-app)
 
 ## Write a config
 
