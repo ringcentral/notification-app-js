@@ -57,7 +57,7 @@ npx glip-integration-js path-to-your-config.js
 
 ## Real example
 
-- [ringcentral-notification-demo-ui-app](https://github.com/ringcentral/ringcentral-notification-demo-ui-app)
+- [ringcentral-notification-app with UI(authorization and else)](https://github.com/ringcentral/ringcentral-notification-demo-ui-app)
 
 ## Write a config
 
