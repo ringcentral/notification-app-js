@@ -28,7 +28,7 @@ Forwarding                    https://xxxx.ap.ngrok.io -> localhost:6066
 # Remember the https://xxxx.ap.ngrok.io, we will use it later
 ```
 
-Goto Glip app's App list, select **Webhook** app, and choose a team, and copy the glip webhook url for later use, and confirm install.
+Goto RingCentral app's App list, select **Webhook** app, and choose a team, and copy the glip webhook url for later use, and confirm install.
 
 ```bash
 # create env file
@@ -44,6 +44,10 @@ npm start
 Then the team will get timestamp message every minute.
 
 Check [example-configs/interval-send-time.js](example-configs/interval-send-time.js) to see the code, it is pretty simple.
+
+## What id need a config page with UI
+
+Check [ringcentral-notification-app with UI(authorization and else)](https://github.com/ringcentral/ringcentral-notification-demo-ui-app) and [ringcentral-notification-integration-helper](https://github.com/ringcentral/ringcentral-notification-integration-helper) which is used to communicate with RingCentral App.
 
 ## Use it as CLI tool
 
