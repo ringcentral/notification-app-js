@@ -22,6 +22,7 @@
     "compile": "node_modules/.bin/babel src --out-dir dist",
     "p": "cross-env NODE_ENV=production node -r @babel/register bin/rcec.js example-configs/interval-send-time.js",
     "dev": "node -r @babel/register bin/rcgi.js example-configs/interval-send-time.js",
+    "dev1": "node -r @babel/register bin/rcgi.js example-configs/interval-send-time-with-adaptive-card.js",
     "clean": "node build/clean.js",
     "build": "npm run clean && npm run compile",
     "prepublishOnly": "npm run build",

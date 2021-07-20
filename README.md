@@ -45,6 +45,14 @@ Then the team will get timestamp message every minute.
 
 Check [example-configs/interval-send-time.js](example-configs/interval-send-time.js) to see the code, it is pretty simple.
 
+## Adaptive cards support
+
+```bash
+npm run dev1
+```
+
+Check [example-configs/interval-send-time-with-adaptive-card.js](example-configs/interval-send-time-with-adaptive-card.js) to see the code
+
 ## What if need a config page with UI
 
 Check [ringcentral-notification-app with UI(authorization and else)](https://github.com/ringcentral/ringcentral-notification-demo-ui-app) and [ringcentral-notification-integration-helper](https://github.com/ringcentral/ringcentral-notification-integration-helper) which is used to communicate with RingCentral App.
