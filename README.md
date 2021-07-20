@@ -1,4 +1,4 @@
-# glip-integration-js
+# notification-app-js
 
 Js framework to create RingCentral notification messaging app.
 
@@ -14,8 +14,8 @@ Let's start a simple RingCentral Glip integration that post time to a Glip team 
 
 ```bash
 # get the code
-git clone git@github.com:ringcentral/glip-integration-js.git
-cd glip-integration-js
+git clone git@github.com:ringcentral/notification-app-js.git
+cd notification-app-js
 
 # install dependecies
 npm i
