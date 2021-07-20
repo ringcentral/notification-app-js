@@ -53,6 +53,8 @@ npm run dev1
 
 Check [example-configs/interval-send-time-with-adaptive-card.js](example-configs/interval-send-time-with-adaptive-card.js) to see the code
 
+Check [https://adaptivecards.io/samples/](https://adaptivecards.io/samples/) for more examples(some may not be implanted yet)
+
 ## What if need a config page with UI
 
 Check [ringcentral-notification-app with UI(authorization and else)](https://github.com/ringcentral/ringcentral-notification-demo-ui-app) and [ringcentral-notification-integration-helper](https://github.com/ringcentral/ringcentral-notification-integration-helper) which is used to communicate with RingCentral App.
