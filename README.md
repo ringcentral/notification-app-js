@@ -65,7 +65,7 @@ Check [ringcentral-notification-app with UI(authorization and else)](https://git
 npx glip-integration-js path-to-your-config.js
 ```
 
-## Use is as a module
+## Use it as a module
 
 [docs/direct-use.md](docs/direct-use.md)
 
