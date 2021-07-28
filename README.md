@@ -28,7 +28,7 @@ Forwarding                    https://xxxx.ap.ngrok.io -> localhost:6066
 # Remember the https://xxxx.ap.ngrok.io, we will use it later
 ```
 
-Goto RingCentral app's App list, select **Webhook** app, and choose a team, and copy the glip webhook url for later use, and confirm install.
+Goto RingCentral app's App list, select [Incoming WebHooks](https://www.ringcentral.com/apps/glip-webhooks) app, and choose a team, and copy the glip webhook url for later use, and confirm install.
 
 ```bash
 # create env file
@@ -53,11 +53,17 @@ npm run dev1
 
 Check [example-configs/interval-send-time-with-adaptive-card.js](example-configs/interval-send-time-with-adaptive-card.js) to see the code
 
-Check [https://adaptivecards.io/samples/](https://adaptivecards.io/samples/) for more examples(some may not be implanted yet)
+Check [https://adaptivecards.io/samples/](https://adaptivecards.io/samples/) for more examples(* some may not be implanted yet)
 
 ## What if need a config page with UI
 
-Check [ringcentral-notification-app with UI(authorization and else)](https://github.com/ringcentral/ringcentral-notification-demo-ui-app) and [ringcentral-notification-integration-helper](https://github.com/ringcentral/ringcentral-notification-integration-helper) which is used to communicate with RingCentral App.
+In quick start section the app is quite simple, only send message to the webhook url, what if we need a third party service send message to the webhook url, for example, a github notification app would auto send github event to RingCentral chat group,
+
+Check these this demo project, with step by step guide in readme:
+
+https://github.com/ringcentral/github-notification-app-demo
+
+Also check [ringcentral-notification-app with UI(authorization and else)](https://github.com/ringcentral/ringcentral-notification-demo-ui-app) and [ringcentral-notification-integration-helper](https://github.com/ringcentral/ringcentral-notification-integration-helper) which is used to communicate with RingCentral App.
 
 ## Use it as CLI tool
 
