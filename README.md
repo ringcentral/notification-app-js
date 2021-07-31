@@ -1,4 +1,4 @@
-# notification-app-js
+# JavaScript Notification Framework
 
 Js framework to create RingCentral notification messaging app.
 
@@ -6,11 +6,11 @@ Js framework to create RingCentral notification messaging app.
 
 - Download and install RingCentral app and login: https://www.ringcentral.com/apps/rc-app
 - Nodejs 8.10+/npm, recommend using [nvm](https://github.com/creationix/nvm) to install nodejs/npm.
-- If you want to create RingCentral Glip integration that can show in RingCentral Glip apps list, you need a RingCentral developer account that can create Glip integration: you need [sign up](https://developers.ringcentral.com/) and apply for the permission to create Glip integration.
+- If you want to create RingCentral Team Messaging integration that can show in RingCentral Team Messaging apps list, you need a RingCentral developer account that can create Team Messaging integration: you need [sign up](https://developers.ringcentral.com/) and apply for the permission to create `Glip` integration.
 
-## Quick start
+## Quick Start Step 1 - Understanding Webhooks to Team Messaging
 
-Let's start a simple RingCentral Glip integration that post time to a Glip team you selected.
+Let's start a simple RingCentral Team Messaging integration that posts the current time to a RingCentral team of your choice.
 
 ```bash
 # get the code
@@ -20,7 +20,7 @@ cd notification-app-js
 # install dependecies
 npm i
 
-# start proxy server, this will make your local bot server can be accessed by RingCentral service
+# start proxy server, this will allow your local bot server to be accessed by the RingCentral service
 npm run ngrok
 
 # will show
@@ -28,42 +28,48 @@ Forwarding                    https://xxxx.ap.ngrok.io -> localhost:6066
 # Remember the https://xxxx.ap.ngrok.io, we will use it later
 ```
 
-Goto RingCentral app's App list, select [Incoming WebHooks](https://www.ringcentral.com/apps/glip-webhooks) app, and choose a team, and copy the glip webhook url for later use, and confirm install.
+Goto RingCentral app's App list, select the [Incoming WebHooks](https://www.ringcentral.com/apps/glip-webhooks) app, choose a team, and copy the incoming webhook url for later use. Confirm installation.
 
 ```bash
 # create env file
 cp .env.sample .env
 # then edit .env,
 # set https://xxxx.ap.ngrok.io as RINGCENTRAL_APP_SERVER
-# set glip webhook url copied as STATIC_WEBHOOK
+# set incoming webhook url copied as STATIC_WEBHOOK
 
 # run local dev server
 npm start
 ```
 
-Then the team will get timestamp message every minute.
+The team will get a timestamp message every minute.
 
 Check [example-configs/interval-send-time.js](example-configs/interval-send-time.js) to see the code, it is pretty simple.
 
-## Adaptive cards support
+## Quick Start Step 2 - Send Adaptive Cards to Team Messaging
+
+Now that you know how to send messages to a team via incoming webhooks, let's send something a little more exciting.
 
 ```bash
 npm run dev1
 ```
 
+This will send an example adaptive card that looks like a GitHub notification. This card will send every 1 minute until you manually stop the running service.
+
 Check [example-configs/interval-send-time-with-adaptive-card.js](example-configs/interval-send-time-with-adaptive-card.js) to see the code
 
-Check [https://adaptivecards.io/samples/](https://adaptivecards.io/samples/) for more examples(* some may not be implanted yet)
+Check [https://adaptivecards.io/samples/](https://adaptivecards.io/samples/) for more examples of adaptive cards (Note: some samples may not render yet as we continue to develop all adaptive card elements) or even use the [https://adaptivecards.io/designer/](https://adaptivecards.io/designer/) to create your own!
 
-## What if need a config page with UI
+## Quick Start Step 3 - Create a Configuration Page
 
-In quick start section the app is quite simple, only send message to the webhook url, what if we need a third party service send message to the webhook url, for example, a github notification app would auto send github event to RingCentral chat group,
+In the quick start step 1 section, the app is quite simple, it only sends a message to the webhook url. What if we have a third party service send a message to the webhook url? For example, a GitHub notification app could auto send GitHub events to RingCentral chat group,
 
-Check these this demo project, with step by step guide in readme:
+Creating a configuration page to setup your webhook source is more involved.  Follow along in this demo project, with step by step guide in readme:
 
 https://github.com/ringcentral/github-notification-app-demo
 
-Also check [ringcentral-notification-app with UI(authorization and else)](https://github.com/ringcentral/ringcentral-notification-demo-ui-app) and [ringcentral-notification-integration-helper](https://github.com/ringcentral/ringcentral-notification-integration-helper) which is used to communicate with RingCentral App.
+Additional guides:
+[ringcentral-notification-app with UI(authorization and else)](https://github.com/ringcentral/ringcentral-notification-demo-ui-app)
+[ringcentral-notification-integration-helper](https://github.com/ringcentral/ringcentral-notification-integration-helper) which is used to communicate with RingCentral App.
 
 ## Use it as CLI tool
 
