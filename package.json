@@ -31,6 +31,7 @@
     "deploy": "npm run build-lambda && npm run deploy-lambda",
     "watch": "cd deploy && ../node_modules/.bin/sls logs -f app -t",
     "lint": "./node_modules/.bin/standard",
+    "fix": "./node_modules/.bin/standard --fix",
     "jest": "./node_modules/.bin/jest",
     "test": "./node_modules/.bin/run-s dev jest"
   },

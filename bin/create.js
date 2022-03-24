@@ -83,9 +83,9 @@ function fetchZip (url, folderPath) {
 
 async function editFiles (from, res) {
   // package.json
-  let pkg = resolve(from, 'package.json')
-  let pkgInfo = require(pkg)
-  let pkgObj = {
+  const pkg = resolve(from, 'package.json')
+  const pkgInfo = require(pkg)
+  const pkgObj = {
     name: res.npmName,
     version: res.version,
     description: res.description,
@@ -100,10 +100,10 @@ async function editFiles (from, res) {
   )
 
   // README
-  let readme = resolve(from, 'README.md')
-  let readmeStr = readFileSync(readme).toString()
-  let arr = readmeStr.split('## Youtube video')
-  let final = `
+  const readme = resolve(from, 'README.md')
+  const readmeStr = readFileSync(readme).toString()
+  const arr = readmeStr.split('## Youtube video')
+  const final = `
 # ${res.name}
 
 ${res.description}
@@ -115,13 +115,13 @@ ${res.description}
 
 module.exports = async function ask ({ path: targetPath, name, auto }) {
   questions[0].initial = name
-  let res = auto
+  const res = auto
     ? {
-      name,
-      npmName: name.replace(/\s+/g, '-'),
-      description: 'Glip integration powered by RingCentral Glip integration framework js',
-      version: '0.0.1'
-    }
+        name,
+        npmName: name.replace(/\s+/g, '-'),
+        description: 'Glip integration powered by RingCentral Glip integration framework js',
+        version: '0.0.1'
+      }
     : await prompts(questions)
   if (!verifyResult(res)) {
     return process.exit(0)
@@ -130,10 +130,10 @@ module.exports = async function ask ({ path: targetPath, name, auto }) {
   console.log(res)
   res.npmName = res.name.replace(/\s+/g, '-')
   echo('building')
-  let language = 'js'
-  let obj = supportedLanguage[language]
-  let { zip, folderName } = obj
-  let from = resolve(tempDir, folderName)
+  const language = 'js'
+  const obj = supportedLanguage[language]
+  const { zip, folderName } = obj
+  const from = resolve(tempDir, folderName)
   await fetchZip(zip, from)
   await editFiles(from, res)
   mv(from, targetPath)

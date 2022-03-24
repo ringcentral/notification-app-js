@@ -11,11 +11,11 @@ program
   .option('-A, --no-promots', 'use default options without promots')
   .parse(process.argv)
 
-let name = program.args.shift()
+const name = program.args.shift()
 if (!name) {
   program.outputHelp()
 } else {
-  let path = resolve(name)
+  const path = resolve(name)
   reef({
     name,
     path,

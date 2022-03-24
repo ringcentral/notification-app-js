@@ -17,11 +17,11 @@ program
   .usage('[configFile]')
   .parse(process.argv)
 
-let name = program.args.shift()
+const name = program.args.shift()
 if (!name) {
   program.outputHelp()
 } else {
-  let path = resolve(name)
+  const path = resolve(name)
   runBot({
     name,
     path
